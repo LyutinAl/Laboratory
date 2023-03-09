@@ -2,17 +2,17 @@ package ru.students.testrest2dbh2.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import lombok.AllArgsConstructor;
 import ru.students.testrest2dbh2.dao.StudentDAO;
 import ru.students.testrest2dbh2.entity.Student;
 
 @Service
-public class StudentServiceImpl implements StudentService{
-    
-    @Autowired
+@AllArgsConstructor
+public class StudentServiceImpl implements StudentService {
+
     private StudentDAO studentDAO;
 
     @Override
@@ -38,6 +38,5 @@ public class StudentServiceImpl implements StudentService{
     public void deleteStudent(int id) {
         studentDAO.deleteStudent(id);
     }
-
 
 }

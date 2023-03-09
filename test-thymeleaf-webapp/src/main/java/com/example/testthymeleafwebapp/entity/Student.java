@@ -1,4 +1,4 @@
-package ru.students.testrest2dbh2.entity;
+package com.example.testthymeleafwebapp.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,23 +6,27 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "students")
 public class Student {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
+
 
     @Column(name = "surname")
     private String surname;
@@ -31,7 +35,5 @@ public class Student {
     private String faculty;
 
     @Column(name = "age")
-    private int age;    
-
-    // Заменил канструкторы на анотацию @NoArgsConstructor и @AllArgsConstructor 
+    private int age;
 }
